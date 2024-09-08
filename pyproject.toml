@@ -1,11 +1,38 @@
 [project]
 name = "vmi-retreat-workshop-2024"
 version = "0.1.0"
-description = "Add your description here"
+description = "Repository for the VMI Summer Retreat Workshop on Hacking AI Agents"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = ["agentdojo>=0.1.14"]
+dependencies = [
+    "agentdojo>=0.1.15",
+    "click>=8.1.7",
+    "python-dotenv>=1.0.1",
+    "rich>=13.8.0",
+]
 
 [tool.pyright]
 venvPath = "."
 venv = ".venv"
+
+[tool.uv]
+dev-dependencies = ["ruff>=0.6.4"]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+ignore = []
+select = [
+    "F",   # pyflakes
+    "UP",  # pyupgrade
+    "I",   # isort
+    "ERA", # eradicate
+    "NPY", # numpy
+    "N",   # pep8-naming
+    "UP",  # pyupgrade
+    "RUF",
+]
+
+[tool.ruff.format]
+docstring-code-format = true
