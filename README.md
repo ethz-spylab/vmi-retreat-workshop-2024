@@ -26,3 +26,10 @@ Then you can run the command using the virtual environment's Python interpreter.
 ```bash
 python attack.py
 ```
+
+The script takes two arguments:
+
+- `--force-rerun` or `-f`: If present, the script will rerun the attack even if at has already been run on the given
+  user tasks.
+- `--user-task` or `-t`: Which user task to run. If none is specified, the script will run on all user tasks.
+  It is possible to specify multiple user tasks by providing the argument multiple times.
