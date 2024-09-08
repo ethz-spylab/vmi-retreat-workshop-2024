@@ -1,0 +1,11 @@
+[project]
+name = "vmi-retreat-workshop-2024"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = ["agentdojo>=0.1.14"]
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
