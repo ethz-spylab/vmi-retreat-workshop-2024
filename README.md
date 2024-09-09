@@ -33,3 +33,18 @@ The script takes two arguments:
   user tasks.
 - `--user-task` or `-t`: Which user task to run. If none is specified, the script will run on all user tasks.
   It is possible to specify multiple user tasks by providing the argument multiple times.
+
+## Other scripts
+
+### `check_results.py`
+
+This script (which does not take any arguments) checks the results of the attack and generates two files:
+
+- `results.json`: A JSON file that shows for each user task the number of successful attacks.
+- `per_attack_results.json`: A JSON file that shows on how many tasks each attack was successful
+
+### `chat.py`
+
+This script takes as argument the name of a JSON file containing a valid conversation history (an example
+is provided in [`conversation.json`](conversation.json)) and runs the conversation against the OpenAI API.
+It is useful to run this script to probe the model's behavior.

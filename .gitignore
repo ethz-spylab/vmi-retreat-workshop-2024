@@ -387,3 +387,5 @@ pyrightconfig.json
 examples/runs
 notebooks/plots/
 runs
+results.json
+per_attack_results.json
