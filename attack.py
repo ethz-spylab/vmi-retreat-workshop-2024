@@ -59,7 +59,7 @@ INJECTION_TASK = "injection_task_4"
 @click.option(
     "--attack",
     type=str,
-    default="instruction_hierarchy",
+    default="instruction_hierarchy_0",
 )
 def main(
     force_rerun: bool = False,
