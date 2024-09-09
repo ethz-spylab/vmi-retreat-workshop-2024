@@ -34,6 +34,12 @@ The script takes two arguments:
 - `--user-task` or `-t`: Which user task to run. If none is specified, the script will run on all user tasks.
   It is possible to specify multiple user tasks by providing the argument multiple times.
 
+## OpenAI key
+Once you get the key, copy the `.env.example` file into `.env`, and edit the `.env` file like this:
+```
+OPENAI_API_KEY=[the key here]
+```
+
 ## Other scripts
 
 ### `check_results.py`
