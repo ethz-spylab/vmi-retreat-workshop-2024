@@ -19,7 +19,7 @@ Follow the instructions below:
 - Create a virtual environment in your preferred way (e.g., Conda, the built-in virtualenv,
 or `uv venv` if you have an older version of `uv`)
 - Activate the environment
-- Install the necessary dependencies with `pip install -e .`
+- Install the necessary dependencies with `pip install -r requirements.txt`
 
 Then you can run the command using the virtual environment's Python interpreter.
 
