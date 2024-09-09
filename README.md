@@ -57,6 +57,17 @@ This script takes as argument the name of a JSON file containing a valid convers
 is provided in [`conversation.json`](conversation.json)) and runs the conversation against the OpenAI API.
 It is useful to run this script to probe the model's behavior.
 
+
+## Editing attack in a file
+
+You can provide a file containing the attack instead of editing the attack in `attack.py`.
+The attack should have a `.jbstring` extension.
+Example:
+
+```bash
+python attack.py --attack test.jbstring -t user_task_2 -f
+```
+
 ### Initial somewhat successful attack
 
 ```python

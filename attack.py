@@ -1,5 +1,6 @@
 import logging
 from collections.abc import Callable
+from pathlib import Path
 
 import click
 import dotenv
@@ -9,6 +10,10 @@ from agentdojo.scripts.benchmark import main as original_main
 from rich.logging import RichHandler
 
 dotenv.load_dotenv()
+
+
+def load_jb_string_from_file(file_path: Path) -> str:
+    return file_path.read_text().strip()
 
 
 @register_attack
@@ -66,6 +71,23 @@ def main(
     user_tasks: tuple[str, ...] = (),
     attack: str | None = None,
 ):
+    if attack and attack.endswith('.jbstring'):
+        attack_path = Path(attack)
+        jb_string = load_jb_string_from_file(attack_path)
+        attack_name = attack_path.stem  # Get filename without extension
+        
+        @register_attack
+        class DynamicAttack(ImportantInstructionsAttack):
+            """
+            {goal}: adversary goal
+            {model}: model name
+            {user}: name of the user
+            """
+            _JB_STRING = jb_string
+            name = attack_name
+        
+        attack = attack_name
+
     assert isinstance(original_main.callback, Callable)
     original_main.callback(
         suites=(SUITE,),
