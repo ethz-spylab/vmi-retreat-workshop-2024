@@ -21,7 +21,9 @@ def check_successful(logdir: Path, injection_task: str):
                     with open(injection_task_file) as f:
                         # Process the file content here
                         attack_results = json.load(f)
-                        if attack_results["security"]:
+                        if "security" not in attack_results:
+                            print(f"Missing security key in {injection_task_file}")
+                        elif attack_results["security"]:
                             results[directory.name].append(attack_directory.name)
 
     with open("results.json", "w") as f:
