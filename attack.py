@@ -54,7 +54,7 @@ INJECTION_TASK = "injection_task_4"
     type=str,
     multiple=True,
     default=tuple(),
-    help="The user tasks to benchmark. If not provided, all tasks in the suite are run.",
+    help="The user tasks to benchmark. Of the form user_task_{{N}} where {{N}} is an integer. If not provided, all tasks in the suite are run.",
 )
 @click.option(
     "--attack",
