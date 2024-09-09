@@ -1,0 +1,5 @@
+agentdojo>=0.1.15
+click>=8.1.7
+openai>=1.44.0
+python-dotenv>=1.0.1
+rich>=13.8.0
